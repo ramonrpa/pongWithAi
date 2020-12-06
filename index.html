@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #canvas{
+            margin-left: 0.8rem;
+            margin-top: 0.2rem;
+        }
+
+        .infos div,
+        .actions {
+            width: 700px;
+            display: flex;
+            text-align: center;
+            margin-left: 0.8rem;
+        }
+
+        .infos p {
+            margin-left: 2rem;
+            font: bold 1.2rem Tahoma;
+        }
+
+        .infos p:first-child {
+            margin-left: 0.2rem;
+        }
+
+        .infos p .value {
+            color: #999;
+        }
+
+        .actions button {
+            margin-left: 2rem;
+            background: #3d9e9e;
+            border: none;
+            border-radius: 10px;
+            color: #eee;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 1rem;
+        }
+
+        .actions button:hover,
+        .actions button:active,
+        .actions button:focus {
+            background: #4bc0c0;
+            border: none;
+            box-shadow: none;
+            outline: inherit;
+        }
+
+        .actions button:first-child {
+            margin-left: 1rem;
+        }
+
+        .chartContainer {
+            width: 45%;
+            float: right;
+            margin-right: 10px;
+        }
+
+        #game {
+            display: none;
+            justify-content: space-between
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="700" height="400" id="canvas"></canvas>
+    <div class="chartContainer">
+        <canvas width="500" height="350" id="chart"></canvas>
+    </div>
+    <div class="infos">
+        <div id="train">
+            <p>Previous Best Score <br><span class="value" id="previousBest">0</span></p>
+            <p>Current Best Score <br><span class="value" id="currentBest">0</span></p>
+            <p>Live Players <br><span class="value" id="livePlayers">0</span></p>
+            <p>Generation <br><span class="value" id="generation">0</span></p>
+        </div>
+        <div id="game">
+            <p><span id="player1-name">Player 1</span><br><span class="value" id="player1Points">0</span></p>
+            <p><span id="player2-name">Player 2</span><br><span class="value" id="player2Points">0</span></p>
+        </div>
+    </div>
+    <div class="actions">
+        <button id="playAI">Play VS AI</button>
+        <button id="playAI2">AI VS AI</button>
+        <button id="trainAI">Train Neural Network</button>
+        <button id="saveBrain">Save Neural Network</button>
+
+        <button id="pause">Pause</button>
+    </div>
+    <script src="neural/nn.js"></script>
+    <script src="neural/matrix.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="chart.js"></script>
+    <script src="utils.js"></script>
+    <script src="pong.js"></script>
+</body>
+
+</html>
