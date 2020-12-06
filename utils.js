@@ -99,9 +99,9 @@ function randColor() {
 function nextGeneration() {
     lastPoints = 0
     let best = getBestPlayer()
+    AddInChart(0, generation, best.points)
     generation++
     updateInfos()
-    AddInChart(0, generation, best.points)
 
     playersRight = []
     for (let i = 0; i < trainingQuantity; i++) {
